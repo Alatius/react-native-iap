@@ -5,7 +5,6 @@ import type {
   Purchase,
   SubscriptionIOS,
   SubscriptionIosPeriod,
-  SubscriptionPromoOffer,
 } from '.';
 import type * as Apple from './apple';
 import {SubscriptionPlatform} from './';
