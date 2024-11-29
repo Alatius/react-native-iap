@@ -99,6 +99,7 @@ export const subscriptionSk2Map = ({
       subscription?.introductoryOffer?.period?.value?.toString(),
     introductoryPriceSubscriptionPeriodIOS: subscription?.introductoryOffer
       ?.period?.unit as SubscriptionIosPeriod,
+    promotionalOffersIOS: subscription?.promotionalOffers,
   };
   return prod;
 };
