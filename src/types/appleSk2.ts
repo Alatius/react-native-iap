@@ -5,6 +5,7 @@ import type {
   Purchase,
   SubscriptionIOS,
   SubscriptionIosPeriod,
+  SubscriptionPromoOffer,
 } from '.';
 import type * as Apple from './apple';
 import {SubscriptionPlatform} from './';
@@ -99,7 +100,11 @@ export const subscriptionSk2Map = ({
       subscription?.introductoryOffer?.period?.value?.toString(),
     introductoryPriceSubscriptionPeriodIOS: subscription?.introductoryOffer
       ?.period?.unit as SubscriptionIosPeriod,
-    promotionalOffersIOS: subscription?.promotionalOffers,
+    promotionalOffersIOS: subscription?.promotionalOffers?.map((offer) => ({
+      price: offer.price,
+      displayPrice: offer.displayPrice,
+      id: offer.id,
+    })),
   };
   return prod;
 };

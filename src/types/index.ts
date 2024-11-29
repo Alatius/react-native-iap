@@ -191,6 +191,12 @@ export interface SubscriptionAmazon extends ProductCommon {
   name?: string;
 }
 
+export interface SubscriptionPromoOffer {
+  price: number;
+  displayPrice: string;
+  id: string;
+}
+
 export type SubscriptionIosPeriod = 'DAY' | 'WEEK' | 'MONTH' | 'YEAR' | '';
 export interface SubscriptionIOS extends ProductCommon {
   platform: SubscriptionPlatform.ios;
@@ -208,6 +214,7 @@ export interface SubscriptionIOS extends ProductCommon {
 
   subscriptionPeriodNumberIOS?: string;
   subscriptionPeriodUnitIOS?: SubscriptionIosPeriod;
+  promotionalOffersIOS?: SubscriptionPromoOffer[];
 }
 
 export type Subscription =
